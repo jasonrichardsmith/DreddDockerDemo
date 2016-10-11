@@ -3,6 +3,7 @@ RUN cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 RUN rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
 RUN pacman -S --noconfirm go nodejs npm git
 
+RUN npm install -g sync-exec
 RUN npm install -g dredd@stable
 
 RUN mkdir /go
